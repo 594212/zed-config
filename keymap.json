@@ -7,9 +7,17 @@
 // from the command palette.
 [
   {
+    //rgrip
     "bindings": {
-      "56798": "workspace::NewCenterTerminal",
-      "alt-2": "workspace::NewCenterTerminal"
+      "56781": "pane::SplitRight",
+      "56782": ["workspace::ActivatePaneInDirection", "Right"],
+      "56783": "workspace::NewCenterTerminal",
+      "56784": "pane::CloseItemsToTheLeft",
+      "56785": ["terminal::SendText", "prg -t rust -t sass"],
+      "shift shift": [
+        "workspace::SendKeystrokes",
+        " 56781 56782 56783 56784 56785 enter"
+      ]
     }
   },
   {
@@ -17,7 +25,8 @@
     "bindings": {
       "alt-v": "workspace::ToggleVimMode",
       "ctrl-shift-w": "pane::CloseActiveItem",
-      "ctrl-w": "workspace::CloseAllDocks"
+      "ctrl-w": "workspace::CloseAllDocks",
+      "alt-2": "workspace::NewCenterTerminal"
     }
   },
   {
@@ -53,7 +62,6 @@
       "ctrl-w shift-right": ["workspace::SwapPaneInDirection", "Right"],
       "ctrl-w shift-up": ["workspace::SwapPaneInDirection", "Up"],
       "ctrl-w shift-down": ["workspace::SwapPaneInDirection", "Down"],
-      "shift shift": "file_finder::Toggle",
       "alt-q": "file_finder::Toggle"
     }
   },
