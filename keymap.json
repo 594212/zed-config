@@ -14,10 +14,8 @@
       "56783": "workspace::NewCenterTerminal",
       "56784": "pane::CloseItemsToTheLeft",
       "56785": ["terminal::SendText", "prg -t rust -t sass"],
-      "shift shift": [
-        "workspace::SendKeystrokes",
-        " 56781 56782 56783 56784 56785 enter"
-      ]
+      "56786": ["terminal::SendKeystroke", "56784 56785 enter"],
+      "shift shift": ["workspace::SendKeystrokes", " 56781 56782 56783"]
     }
   },
   {
@@ -86,8 +84,8 @@
     "context": "ProjectPanel",
     "bindings": {
       "alt-1": "workspace::ToggleLeftDock",
-      "a": "project_panel::NewFile",
-      "d": "project_panel::Delete"
+      "ctrl-a": "project_panel::NewFile",
+      "ctrl-d": "project_panel::Delete"
     }
   },
   {
