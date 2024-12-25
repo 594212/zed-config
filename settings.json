@@ -32,7 +32,8 @@
     "cursor_shape": "bar",
     "blinking": "on",
     "env": {
-      "EDITOR": "zed"
+      "EDITOR": "zed",
+      "VISUAL": "zed"
     }
   },
   "lsp": {
@@ -54,5 +55,7 @@
   },
   "scrollbar": {
     "show": "auto"
-  }
+  },
+  "load_direnv": "shell_hook",
+  "max_tabs": 19
 }

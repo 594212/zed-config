@@ -14,17 +14,17 @@
       "56783": "workspace::NewCenterTerminal",
       "56784": "pane::CloseItemsToTheLeft",
       "56785": ["terminal::SendText", "prg -t rust -t sass"],
-      "56786": ["terminal::SendKeystroke", "56784 56785 enter"],
-      "shift shift": ["workspace::SendKeystrokes", " 56781 56782 56783"]
+      "56786": ["terminal::SendKeystroke", "56784 56785 enter"]
     }
   },
   {
     //global keybindings
     "bindings": {
       "alt-v": "workspace::ToggleVimMode",
+      "alt-w": "pane::CloseActiveItem",
       "ctrl-shift-w": "pane::CloseActiveItem",
       "ctrl-w": "workspace::CloseAllDocks",
-      "alt-2": "workspace::NewCenterTerminal"
+      "alt-s": "workspace::NewCenterTerminal"
     }
   },
   {
@@ -74,6 +74,12 @@
     }
   },
   {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "ctrl-c": "workspace::ToggleVimMode"
+    }
+  },
+  {
     "context": "Workspace && vim_mode == insert",
     "bindings": {
       "ctrl-c": "editor::Copy",
@@ -83,7 +89,7 @@
   {
     "context": "ProjectPanel",
     "bindings": {
-      "alt-1": "workspace::ToggleLeftDock",
+      "alt-a": "workspace::ToggleLeftDock",
       "ctrl-a": "project_panel::NewFile",
       "ctrl-d": "project_panel::Delete"
     }
@@ -91,7 +97,7 @@
   {
     "context": "!ProjectPanel",
     "bindings": {
-      "alt-1": "project_panel::ToggleFocus"
+      "alt-a": "project_panel::ToggleFocus"
     }
   },
   {
@@ -99,8 +105,9 @@
     "bindings": {
       "ctrl-`": "workspace::ToggleBottomDock",
       "ctrl-shift-w": "pane::CloseActiveItem",
+      "alt-w": "pane::CloseActiveItem",
       "ctrl-shift-t": "workspace::NewTerminal",
-      "alt-2": "pane::CloseActiveItem",
+      "alt-s": "pane::CloseActiveItem",
       "ctrl-o": null
     }
   },
