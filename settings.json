@@ -11,24 +11,36 @@
     "quick_actions": false,
     "breadcrumbs": false
   },
-  "assistant": {
-    "default_model": {
-      "provider": "copilot_chat",
-      "model": "gpt-4o"
-    },
-    "show_hints": true,
-    "version": "2"
-  },
   "base_keymap": "VSCode",
   "vim_mode": false,
+  "buffer_font_family": "Iosevka Nerd Font Mono",
   "ui_font_size": 16,
-  "buffer_font_size": 16,
+  "buffer_font_weight": 500,
+  "project_panel": {
+    "dock": "right"
+  },
   "theme": {
     "mode": "system",
+    // "light": "Gruvbox Light Soft",
     "light": "One Light",
     "dark": "gruvbox hard2"
   },
   "terminal": {
+    "font_family": "JetBrainsMono Nerd Font",
+    "toolbar": {
+      // Whether to display the terminal title in its toolbar's breadcrumbs.
+      // Only shown if the terminal title is not empty.
+      //
+      // The shell running in the terminal needs to be configured to emit the title.
+      // Example: `echo -e "\e]2;New Title\007";`
+      "breadcrumbs": false
+    },
+    "shell": {
+      "with_arguments": {
+        "program": "/bin/bash",
+        "args": ["--login"]
+      }
+    },
     "cursor_shape": "bar",
     "blinking": "on",
     "env": {
@@ -48,17 +60,68 @@
     }
   },
   "languages": {
+    "Go": {
+      "format_on_save": "language_server",
+      "formatter": [
+        {
+          "external": {
+            "command": "gofumpt"
+          }
+        },
+        {
+          "external": {
+            "command": "golines --no-reformat-tags"
+          }
+        }
+      ]
+    },
     "HTML": {
-      "language_servers": ["vscode-html-language-server", "superhtml"],
+      "language_servers": [
+        "vscode-html-language-server",
+        "superhtml",
+        "emmet-language-server"
+      ],
       "formatter": { "language_server": { "name": "superhtml" } }
     },
     "Zig": {
       "language_servers": ["zls"]
+    },
+    "C": {
+      "format_on_save": "off",
+      "tab_size": 2
+    },
+    "TypeScript": {
+      "language_servers": ["typescript-language-server"]
+    },
+    "TSX": {
+      "language_servers": ["typescript-language-server"]
+    },
+    "JavaScript": {
+      "language_servers": ["typescript-language-server"]
     }
   },
   "scrollbar": {
     "show": "auto"
   },
   "load_direnv": "shell_hook",
-  "max_tabs": 19
+  "max_tabs": 10,
+  "preview_tabs": {
+    "enabled": true,
+    "enable_preview_from_code_navigation": true,
+    "enable_preview_from_file_finder": false
+  },
+
+  // suggestion and complition
+  "show_edit_predictions": false,
+  "show_completions_on_input": false,
+  "assistant": {
+    "dock": "left",
+    "enabled": true,
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-4o"
+    },
+    "show_hints": false,
+    "version": "2"
+  }
 }
