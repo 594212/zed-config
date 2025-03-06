@@ -10,11 +10,10 @@
     //rgrip
     "bindings": {
       "56781": "pane::SplitRight",
-      "56782": ["workspace::ActivatePaneInDirection", "Right"],
+      "56782": "workspace::ActivatePaneRight",
       "56783": "workspace::NewCenterTerminal",
       "56784": "pane::CloseItemsToTheLeft",
-      "56785": ["terminal::SendText", "prg -t rust -t sass"],
-      "56786": ["terminal::SendKeystroke", "56784 56785 enter"]
+      "alt %": ["workspace::SendKeystrokes", "56781 56782 56783"]
     }
   },
   {
@@ -34,7 +33,14 @@
       "shift-enter": "editor::NewlineBelow",
       "ctrl-o": "pane::GoBack",
       // "j k": ["workspace::SendKeystrokes", "escape"],
-      "ctrl-i": "pane::GoForward"
+      "ctrl-i": "pane::GoForward",
+      "alt-d": "editor::DeleteToNextWordEnd",
+      "alt-s": "editor::DeleteToEndOfLine",
+      "alt-f": "editor::MoveToNextWordEnd",
+      "alt-e": "editor::SelectToEndOfLine",
+      "alt-x": "editor::SelectLine",
+      "alt-k": "editor::Hover"
+
       //
     }
   },
@@ -52,14 +58,14 @@
   {
     "context": "Workspace",
     "bindings": {
-      "ctrl-w ctrl-left": ["workspace::ActivatePaneInDirection", "Left"],
-      "ctrl-w ctrl-right": ["workspace::ActivatePaneInDirection", "Right"],
-      "ctrl-w ctrl-up": ["workspace::ActivatePaneInDirection", "Up"],
-      "ctrl-w ctrl-down": ["workspace::ActivatePaneInDirection", "Down"],
-      "ctrl-w shift-left": ["workspace::SwapPaneInDirection", "Left"],
-      "ctrl-w shift-right": ["workspace::SwapPaneInDirection", "Right"],
-      "ctrl-w shift-up": ["workspace::SwapPaneInDirection", "Up"],
-      "ctrl-w shift-down": ["workspace::SwapPaneInDirection", "Down"],
+      "ctrl-w ctrl-left": "workspace::ActivatePaneLeft",
+      "ctrl-w ctrl-right": "workspace::ActivatePaneRight",
+      "ctrl-w ctrl-up": "workspace::ActivatePaneUp",
+      "ctrl-w ctrl-down": "workspace::ActivatePaneDown",
+      "ctrl-w shift-left": "workspace::SwapPaneLeft",
+      "ctrl-w shift-right": "workspace::SwapPaneRight",
+      "ctrl-w shift-up": "workspace::SwapPaneUp",
+      "ctrl-w shift-down": "workspace::SwapPaneDown",
       "alt-q": "file_finder::Toggle"
     }
   },
@@ -89,7 +95,7 @@
   {
     "context": "ProjectPanel",
     "bindings": {
-      "alt-a": "workspace::ToggleLeftDock",
+      "alt-a": "workspace::ToggleRightDock",
       "ctrl-a": "project_panel::NewFile",
       "ctrl-d": "project_panel::Delete"
     }
